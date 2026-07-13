@@ -1,0 +1,42 @@
+Internet Control Message Protocol: 
+- Network/Layer 3 protocol (It is carried inside an IP packet)
+- It is neither TCP nor UDP.
+- used by network devices to report errors, provide diagnostic information, and test network connectivity. 
+- ICMP does not transport application data. 
+- It is mainly used by tools: ping and traceroute.
+
+# Echo:
+- It is network messages 
+- Used in ICMP to test device reachability and network latency. 
+- operates via two core message types: Echo Request (Type 8) and Echo Reply (Type 0).
+- Port: 7
+
+# Ping: 
+- network diagnostic utility 
+- uses ICMP Echo Request-Reply messages to verify connectivity between two hosts and to measure round-trip time (RTT).
+- If Reply comes: Host reachable.
+  If not: Host may be unreachable or ICMP may be blocked.
+- Ping measures: Connectivity, Round Trip Time (RTT), Packet Loss
+- Ping failing Issues: 
+	i.   Firewall blocks ICMP
+	ii.  ICMP disabled
+	iii. ACL blocks ICMP
+	iv.  Network issue
+
+# Round-trip time (RTT) : 
+- It is the duration, 
+- Measure in milliseconds (ms)
+- Time taken for a data packet to travel from a sender to a destination and for the sender to receive an acknowledgment of that receipt
+
+# Time To Live (TTL):
+- Numerical value Set by Sender Device.
+- Every time the packet passes through a router (a "hop"), the router decreases the TTL value by 1.
+- The outcome: If the TTL reaches 0 before reaching its destination, the router discards the packet and sends an ICMP "Time Exceeded" message back to the sender. 
+- This prevents lost packets from endlessly looping and congesting the network.
+
+# Traceroute:
+- network diagnostic command 
+- used to track the path and measure the transit delays of packets across an IP network. 
+- It shows every "hop" (router) your data passes through on its way to a destination and reveals where lag or packet loss occurs.
+- Linux / macOS: traceroute 
+- Windows: tracert

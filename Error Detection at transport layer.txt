@@ -1,0 +1,20 @@
+# How is Error Detection achieved in the Transport Layer?
+TCP uses a Checksum.
+
+Suppose sender sends: HELLO
+TCP calculates: Checksum = ABCD
+
+Packet:
+Data = HELLO
+Checksum = ABCD
+
+Receiver receives packet:
+Calculates checksum again.
+If: Calculated == Received
+No corruption.
+
+If: Calculated != Received
+Packet is corrupted.
+TCP discards it.
+
+Eventually sender retransmits because ACK is not received (or due to duplicate ACK logic).

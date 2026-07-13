@@ -1,0 +1,23 @@
+# Congestion:
+It happens when too much data is sent through the network at the same time, causing delays, packet loss, or even network collapse.
+
+# Congestion control:
+It is the set of techniques and mechanisms used to prevent, detect, and manage congestion. Its main goal is to maintain smooth data flow, fair bandwidth allocation, and efficient utilization of network resources, ensuring a stable and reliable network performance.
+
+# Example: 
+Suppose:
+PC1, PC2, PC3, PC4
+↓
+Same Router
+
+Everyone sends: 10 Gbps
+Router capacity: 1 Gbps
+Router queue fills.
+Packets get dropped, This is congestion.
+
+
+# How does TCP know congestion occurred?
+TCP assumes congestion when it observes:
+Packet loss (timeout)
+Three duplicate ACKs
+Then it reduces the congestion window (cwnd).

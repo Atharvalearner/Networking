@@ -1,0 +1,44 @@
+Flow control is a mechanism used by TCP to ensure that the sender does not send data faster than the receiver can process it. It prevents the receiver's buffer from overflowing.
+
+Imagine:
+Sender can send 1000 MB/s
+Receiver can process only 100 MB/s
+
+Without flow control:
+Sender ---------------------> Receiver
+
+1000 MB/s
+
+Receiver's buffer fills up.
+Packets start getting dropped.
+
+With Flow Control:
+Receiver says:
+I can only receive 100 MB now.
+Sender slows down.
+
+
+How does TCP implement Flow Control?
+TCP uses a Receive Window (rwnd).
+
+Suppose the receiver has:
+Buffer Size = 5000 Bytes
+Currently Used = 2000 Bytes
+Available = 3000 Bytes
+
+In this case Receiver sends:
+Window Size = 3000
+
+Meaning:
+"Please don't send more than 3000 bytes until I acknowledge more data."
+
+After processing data:
+Buffer Free = 5000 Bytes
+
+Receiver advertises:
+Window Size = 5000
+
+Sender increases transmission.
+
+Who controls Flow Control?
+The receiver controls it by advertising the available receive window.

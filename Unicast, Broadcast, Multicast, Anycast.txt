@@ -1,0 +1,19 @@
+|-----------------------------------------------------------------------------------------------------------------------------------------|
+| Feature                       | Unicast              | Broadcast             | Multicast              | Anycast                         |
+| ----------------------------- | -------------------- | --------------------- | ---------------------- | ------------------------------- |
+| Pattern                       | One-to-one           | One-to-all            | One-to-group           | One-to-one-of-many              |
+| Receiver                      | Specific device      | Everyone locally      | Group members          | One selected instance           |
+| Common use                    | Web, SSH             | ARP, DHCP             | IPTV, routing          | DNS, distributed services       |
+| Crosses routers normally?     | Yes                  | Layer 2 broadcast: No | With multicast routing | Yes, through normal routing     |
+| Efficient for many receivers? | No                   | Often wasteful        | Yes                    | Not a group-delivery mechanism  |
+| IPv4 range                    | Normal unicast space | Depends on subnet     | `224.0.0.0/4`          | Uses unicast addressing/routing |
+|-----------------------------------------------------------------------------------------------------------------------------------------|
+
+# What is the Ethernet broadcast MAC address?
+FF:FF:FF:FF:FF:FF
+
+# Is ARP unicast or broadcast?
+ARP Request → Broadcast
+ARP Reply → Unicast
+
+Unicast is one-to-one communication between a sender and one specific receiver. Broadcast is one-to-all communication within a broadcast domain, such as an ARP request. Multicast is one-to-many communication where only members of a selected group receive the traffic, making it useful for applications such as IPTV. Anycast uses the same service address at multiple locations, and routing directs the sender to one selected instance, usually based on the best available route.

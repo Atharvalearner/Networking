@@ -1,0 +1,46 @@
+| Network | Full Form                 | Coverage           | Real Example                        |
+| ------- | ------------------------- | ------------------ | ----------------------------------- |
+| PAN     | Personal Area Network     | 1–10 meters        | Bluetooth between phone and earbuds |
+| LAN     | Local Area Network        | Room, Home, Office | Office network                      |
+| CAN     | Campus Area Network       | Multiple buildings | University campus                   |
+| MAN     | Metropolitan Area Network | Entire city        | City-wide ISP network               |
+| WAN     | Wide Area Network         | Country/World      | Internet, Bank network              |
+| GAN     | Global Area Network       | Worldwide          | Global mobile/satellite networks    |
+| SAN     | Storage Area Network      | Data center        | Server connected to storage arrays  |
+
+
+1. PAN: 
+Coverage: short-range network 
+connect personal devices such as smartphones, smartwatches, wireless keyboards, and Bluetooth headsets.
+Technologies: Bluetooth, NFC, USB(wired personal connection)
+
+2. LAN:
+connects devices within a limited area such as a home, office, laboratory, or school building.
+coverage: few meters to a few kilometers
+Technologies: Ethernet, WiFi
+
+3. CAN:
+related to the geographical location
+connects multiple LANs within a campus or organization or university or hospital.
+coverage: 1–5 km (typically)
+
+4. MAN:
+connects networks across a city or metropolitan area.
+coverage: Entire City
+examples: Cable TV Network, Metro Ethernet, Smart City Networks
+
+5. WAN:
+connects networks across countries or continents.
+coverage: Thousands of kilometers
+Internet is the world's largest WAN.
+connects geographically distant networks using technologies such as leased lines, MPLS, VPNs, or the Internet.
+
+6. GAN:
+a worldwide network that provides communication across multiple countries and continents.
+eg: Global satellite phone systems, International mobile networks, Worldwide corporate communication systems
+provides worldwide communication by interconnecting WANs using technologies such as satellite and international communication infrastructure.
+
+7. SAN:
+dedicated high-speed network used to connect servers with centralized storage for fast, reliable, block-level data access.
+Used In: Data Centers, Banks, Cloud Providers, VMware Clusters
+Technologies: Fibre Channel, iSCSI, Fibre Channel over Ethernet (FCoE)

@@ -1,0 +1,51 @@
+# Reverse ARP (RARP)
+Suppose a very old diskless computer boots.
+It knows only: MAC Address - AA:AA:AA:AA
+It does not know: IP Address
+So it asks: "I know my MAC address. Please tell me my IP address."
+This is Reverse ARP (RARP): MAC  →  IP
+
+# Example:
+Computer boots: Knows: MAC - AA-AA-AA
+It Doesn't know: IP
+so It broadcasts: My MAC is AA-AA-AA
+What is my IP? RARP Server replies:
+Your IP is: 192.168.1.10
+
+# Why don't we use RARP today?
+Because DHCP replaced RARP.
+
+Why?
+RARP could only provide: IP Address
+where DHCP provides much more: IP Address, Subnet Mask, Default Gateway, DNS Server, Lease Time, NTP Server, Many other options
+
+So today, RARP is essentially obsolete/vanished.
+
+
+
+
+$ Proxy ARP:
+Proxy ARP is a networking technique where an intermediary device - a router answers Address Resolution Protocol (ARP) requests on behalf of another device. Instead of the original device answering with its MAC address, the proxy device intercepts the request and responds with its own MAC address
+
+# Example:
+```
+PC A                  Router                 PC B
+192.168.1.10          Proxy ARP             192.168.2.20
+
+	Who has 192.168.2.20?
+-------------------------->
+
+		Router replies: "I do"
+		(MAC = Router)
+	<--------------------------
+
+PC sends frame to Router
+Router forwards it to PC B
+```
+
+Why use Proxy ARP?
+Historically it was useful when:
+1. Hosts were misconfigured
+2. Subnetting changes were being introduced
+3. Devices didn't support proper routing
+Nowadays, it's used much less because proper routing is preferred

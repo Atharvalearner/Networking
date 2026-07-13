@@ -1,0 +1,61 @@
+A switch has limited MAC table capacity. When the table becomes full, it may be unable to learn new MAC addresses. If traffic arrives for a destination not present in the table, the switch treats it as unknown unicast and floods it within the VLAN. An attacker can intentionally create this condition by sending frames with many fake source MAC addresses, known as MAC or CAM table flooding. A common defense is port security, which limits the number of MAC addresses that can be learned on an access port.
+
+
+# What Happens When a Switch’s MAC Table Becomes Full?
+MAC Table Full
+↓
+Cannot learn some new MAC addresses
+↓
+Those destinations remain unknown
+↓
+Unknown unicast flooding increases
+↓
+More unnecessary traffic
+
+
+|	MAC Flooding				  |	Unknown Unicast Flooding		  |
+--------------------------------------------------------------------------------------------------|
+| Usually an attack or table-exhaustion technique | Normal switch behavior			  |
+| Many fake source MACs are sent		  | Destination MAC is not in the table		  |
+| Goal/effect: pressure MAC table 		  | Goal: try to reach unknown destination	  |
+| Can lead to more unknown unicast flooding	  | Happens naturally when destination is unknown |
+
+
+# Port security:
+
+It limits which or how many MAC addresses can be learned on a port and defines what happens when the limit is violated.
+Port Security Actions:
+Action:  Protect, Restrict, Shutdown
+
+# Sticky MAC address (or persistent MAC learning):
+It is a Cisco IOS port-security feature
+allows an Ethernet switch to dynamically learn a device's MAC address and permanently save it to the switch's running configuration.
+It eliminates the need to manually type device addresses.
+
+# How It Works Learning:
+- When a device is first plugged into a sticky-enabled port, the switch records its source MAC address.
+- Persistence: The address is written into the switch's configuration and saved to the startup configuration.
+- The switch won't have to relearn it after a reboot.
+- Security: After the MAC address is "stuck" to the port, the switch restricts access.
+- If a different device is plugged in, the switch views it as a security violation and can block the traffic or shut the port down entirely.
+
+# Typical Configuration Example (Cisco):
+1. switchport port-security: to enable port security.
+2. switchport port-security mac-address sticky: to instruct the switch to learn the first connected device.
+3. switchport port-security violation shutdown: to automatically turn off the port if someone unplugs the trusted device.
+
+# What is MAC flooding?
+MAC flooding is a technique where many frames with different source MAC addresses are sent to pressure or exhaust the switch's MAC table.
+
+# How can MAC flooding be prevented?
+A common defense is switch port security, which limits the number of MAC addresses allowed on an access port and defines actions for violations.
+
+# What is the difference between MAC flooding and ARP spoofing?
+MAC flooding targets the switch's MAC-to-port table, while ARP spoofing corrupts IP-to-MAC mappings to redirect traffic.
+
+# What is the difference between MAC flooding and a broadcast storm?
+MAC flooding pressures the MAC table using many source addresses, while a broadcast storm is excessive broadcast traffic, commonly associated with Layer 2 loops.
+
+# An attacker connects a laptop to a switch and sends thousands of frames with random source MAC addresses. What happens?
+The switch learns source MAC addresses from incoming Ethernet frames, so it may try to add those fake addresses to its MAC or CAM table. If the table becomes pressured or full, legitimate destinations may not be present in the table. Frames for those destinations are treated as unknown unicast and flooded within the VLAN. This may allow the attacker to receive copies of some traffic that would normally be sent only to another switch port. The main defense is port security, which limits the number of MAC addresses that can be learned on an access port.
+
