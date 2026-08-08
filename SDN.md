@@ -2,7 +2,7 @@ Software-Defined Networking, or SDN, is an architecture that separates network c
 
 
 
-***Simply:*** 
+***Simply:***
 
 SDN Separate the control plane from individual network devices(Router/Switch/Other Forwarding Devices) and manage network behavior centrally through software.
 
@@ -11,6 +11,10 @@ SDN Separate the control plane from individual network devices(Router/Switch/Oth
 **# SDN:**
 
 It is a network architecture that separates network control from packet forwarding and makes the network centrally programmable through software.
+
+
+
+* Core Enterprise SDN Solutions: Cisco ACI / Meraki, VMware NSX, Juniper Contrail
 
 
 
@@ -24,7 +28,7 @@ It is a network architecture that separates network control from packet forwardi
 
 &#x20;                      ▼
 
-&#x20;             ┌─────────────┐
+&#x20;             ┌────────────----─┐
 
 &#x20;             │  APPLICATIONS   │
 
@@ -38,13 +42,13 @@ It is a network architecture that separates network control from packet forwardi
 
 &#x20;             │ Analytics       │
 
-&#x20;             └──────┬──────┘
+&#x20;             └──────┬──────----┘
 
 &#x20;                NORTHBOUND API
 
 &#x20;                      ▼
 
-&#x20;             ┌─────────────┐
+&#x20;             ┌─────────----────┐
 
 &#x20;             │ SDN CONTROLLER  │
 
@@ -58,11 +62,11 @@ It is a network architecture that separates network control from packet forwardi
 
 &#x20;             │ Automation      │
 
-&#x20;             └──────┬──────┘
+&#x20;             └──────┬─────----─┘
 
 &#x20;                SOUTHBOUND API
 
-&#x20;          ┌────────┼─────────┐
+&#x20;          ┌──-──────-┼--─────────┐
 
 &#x20;          ▼          ▼           ▼
 
@@ -70,9 +74,9 @@ It is a network architecture that separates network control from packet forwardi
 
 &#x20;       Data Plane  Data Plane  Data Plane
 
-&#x20;          └────────┼─────────┘
+&#x20;          └--────────┼--─────────┘
 
-&#x20;                      ▼
+&#x20;                     ▼
 
 &#x20;                 USER TRAFFIC
 
@@ -166,7 +170,7 @@ Infrastructure layer: Switches, Routers, Other Forwarding devices: It Forward th
 
 **# What is an SDN controller?**
 
-Logically centralized control component 
+Logically centralized control component
 
 that maintains network state, interprets policies, makes control decisions, and programs or coordinates network devices.
 

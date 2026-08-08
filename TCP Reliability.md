@@ -44,19 +44,19 @@ Receiver checks integrity
 
 &#x20;    Check sequence numbers
 
-&#x20;           │
+&#x20;              │
 
-&#x20;      ┌────┼────┐
+&#x20;      ┌──-─--─┼────--┐
 
-&#x20;      │    │    │
+&#x20;      │       │      │
 
 &#x20;    Correct Missing Duplicate
 
-&#x20;      │    │    │
+&#x20;      │       │      │
 
-&#x20;      ▼    ▼    ▼
+&#x20;      ▼       ▼      ▼
 
-&#x20;   Accept  Wait/ Discard
+&#x20;   Accept  Wait/   Discard
 
 &#x20;           recover
 
@@ -97,8 +97,4 @@ By examining sequence numbers and already-received byte ranges.
 ***# What happens if an ACK is lost?***
 
 The sender may retransmit data after its recovery logic determines acknowledgement is missing. The receiver recognizes duplicate bytes through sequence numbers and does not deliver them twice to the application
-
-
-
-
 

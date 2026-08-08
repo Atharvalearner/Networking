@@ -1,17 +1,32 @@
-# How is Error Detection achieved in the Transport Layer?
-TCP uses a Checksum.
+The Transport Layer, specifically TCP, performs error detection using a 16-bit checksum field present in the TCP header. Before sending a TCP segment, the sender calculates the checksum over the TCP header, the application data (payload), and a pseudo-header containing important IP information such as the source IP, destination IP, protocol number, and TCP length. The computed checksum is inserted into the TCP header.
 
+When the receiver gets the segment, it performs the same checksum calculation over the received data, including the checksum field. If the result is valid (the 1's complement sum equals 0xFFFF), the segment is considered error-free, and the data is passed to the application layer. The receiver then sends an ACK to acknowledge successful delivery.
+
+If the checksum validation fails, TCP assumes the segment has been corrupted during transmission. Instead of sending a Negative Acknowledgement (NACK), TCP simply discards the corrupted segment. Since the sender does not receive the expected ACK within the timeout period—or receives duplicate ACKs—it retransmits the missing segment. This mechanism ensures reliable data delivery.
+
+
+# How is Error Detection achieved in the Transport Layer?
+TCP uses a Checksum Method for Error detection.
+
+
+# Step-by-Step Flowchart of the Error Control Loop Compute Checksum: 
+1. Sender calculates 1's complement sum over the pseudo-header and payload.
+2. Transmit Segment: The checksum is injected into the header and sent across the network.
+3. Verify at Destination: Receiver evaluates the complete block including the checksum field.
+4. Conditional Branching:
+- If Sum == 0xFFFF: The packet is clean. The receiver passes the data to the application layer and schedules an Acknowledgement (ACK).
+- If Sum != 0xFFFF: The packet is corrupt. TCP silently drops the segment. It does not send a Negative Acknowledgement (NACK).
+
+# Example:
 Suppose sender sends: HELLO
 TCP calculates: Checksum = ABCD
 
-Packet:
-Data = HELLO
-Checksum = ABCD
+Packet: TCP Header + Data = HELLO + Checksum = ABCD
 
 Receiver receives packet:
 Calculates checksum again.
 If: Calculated == Received
-No corruption.
+No corruption, receiver passes the data to the application layer.
 
 If: Calculated != Received
 Packet is corrupted.

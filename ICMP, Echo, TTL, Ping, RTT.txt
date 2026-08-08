@@ -4,12 +4,12 @@ Internet Control Message Protocol:
 - used by network devices to report errors, provide diagnostic information, and test network connectivity. 
 - ICMP does not transport application data. 
 - It is mainly used by tools: ping and traceroute.
+- ICMP identifies messages using Type and Code fields.
 
 # Echo:
 - It is network messages 
 - Used in ICMP to test device reachability and network latency. 
 - operates via two core message types: Echo Request (Type 8) and Echo Reply (Type 0).
-- Port: 7
 
 # Ping: 
 - network diagnostic utility 
@@ -33,6 +33,10 @@ Internet Control Message Protocol:
 - Every time the packet passes through a router (a "hop"), the router decreases the TTL value by 1.
 - The outcome: If the TTL reaches 0 before reaching its destination, the router discards the packet and sends an ICMP "Time Exceeded" message back to the sender. 
 - This prevents lost packets from endlessly looping and congesting the network.
+- Common Default TTLs
+	Windows: 128
+	Linux / Unix / macOS: 64
+	Network Devices (Routers/Switches): 255
 
 # Traceroute:
 - network diagnostic command 

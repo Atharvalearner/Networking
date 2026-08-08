@@ -8,13 +8,13 @@ As earlier data is acknowledged, the allowed sequence-number range/window moves 
 
 
 
-**rwnd:**
+***rwnd (receive window): manage flow control by receiver***
 
 The receive window advertised by the receiver. It helps prevent the sender from overwhelming the receiver's buffer.
 
 
 
-**cwnd:**
+***cwnd (congestion window): manage congestion control by sender***
 
 The congestion window maintained by the sender's TCP congestion-control logic. It limits data in flight based on network conditions.
 

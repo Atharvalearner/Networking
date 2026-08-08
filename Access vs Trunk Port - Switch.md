@@ -10,9 +10,9 @@ An access port normally carries traffic for one VLAN and commonly connects an en
 
 **┌──────────────┬────────────┬──────────┬──────────┐**
 
-**│ Destination  		│ Source MAC 	│ EtherType	   │   Data   	 │**
+**│ Destination  │ Source MAC │ EtherType│   Data   │**
 
-**│ MAC          		│            	│          	   │             │**
+**│ MAC          │            │          │          │**
 
 **└──────────────┴────────────┴──────────┴──────────┘**
 
@@ -22,9 +22,9 @@ An access port normally carries traffic for one VLAN and commonly connects an en
 
 **┌──────────────┬────────────┬──────────┬──────────┬──────────┐**
 
-**│ Destination  		│ Source MAC 	│ 802.1Q   		│ EtherType	 │   Data   	│**
+**│ Destination  │ Source MAC │ 802.1Q   │ EtherType│   Data   │**
 
-**│ MAC          		│            	│ VLAN Tag 		│          	 │          	│**
+**│ MAC          │            │ VLAN Tag │          │          │**
 
 **└──────────────┴────────────┴──────────┴──────────┴──────────┘**
 
@@ -42,9 +42,9 @@ eg. PC sends:
 
 ┌─────────────────────┐
 
-│ Ethernet Frame            │
+│ Ethernet Frame No   │
 
-│ No 802.1Q tag normally    │
+│ 802.1Q tag normally │
 
 └─────────────────────┘
 
@@ -62,9 +62,9 @@ eg. Switch sends:
 
 ┌──────────────────────┐
 
-│ Ethernet Frame             │
+│ Ethernet Frame       │
 
-│ 802.1Q Tag: VLAN 10        │
+│ 802.1Q Tag: VLAN 10  │
 
 └──────────────────────┘
 

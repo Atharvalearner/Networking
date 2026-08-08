@@ -10,7 +10,7 @@ It is a network design model that divides an enterprise network into Access, Dis
 
 &#x20;                │
 
-&#x20;       ┌──────┴──────┐
+&#x20;       ┌────--──┴--──────┐
 
 &#x20;       │                 │
 
@@ -20,7 +20,7 @@ It is a network design model that divides an enterprise network into Access, Dis
 
 &#x20;       │                 │
 
-&#x20;   ┌──┴──┐          ┌──┴──┐
+&#x20;   ┌-──┴-──┐         ┌-──┴-──┐
 
 &#x20;   │       │         │       │
 
@@ -50,7 +50,7 @@ It is a network design model that divides an enterprise network into Access, Dis
 
 
 
-***# Access Layer(Contains Switch):*** 
+***# Access Layer(Contains Switch):***
 
 
 
@@ -58,11 +58,11 @@ It is a network design model that divides an enterprise network into Access, Dis
 
 &#x20;                 │
 
-&#x20;             ACCESS SWITCH
+&#x20;           ACCESS SWITCH
 
-&#x20;         ┌─────┼──────┐
+&#x20;         ┌---─────┼──────┐
 
-&#x20;         │       │       │
+&#x20;         │        │      │
 
 &#x20;        PC     Phone   Printer
 
@@ -99,9 +99,9 @@ It is a network design model that divides an enterprise network into Access, Dis
 
 
 
-&#x20;                  CORE
+&#x20;                 CORE
 
-&#x20;             ┌────┴───┐
+&#x20;             ┌────┴───---┐
 
 &#x20;             │           │
 
@@ -133,9 +133,9 @@ Core: Transport
 
 Suppose the company has two buildings.
 
+
+
 BUILDING A                              BUILDING B
-
-
 
 PC A                                      Server
 
@@ -151,7 +151,7 @@ Distribution A                          Distribution B
 
 &#x20;        \\                                /
 
-&#x20;         └─────────CORE ──────────┘
+&#x20;         └---─────────CORE ────---──────┘
 
 
 

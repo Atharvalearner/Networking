@@ -182,7 +182,7 @@ Example:
 
 Production Network		Separate Management Network
 
-&#x20;       │									|
+&#x20;       │				    |
 
 &#x20;       ▼				    ▼
 

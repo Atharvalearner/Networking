@@ -1,7 +1,13 @@
-**Ethernet :**
+Ethernet is the most widely used wired LAN technology, standardized by IEEE 802.3. It operates at the Physical Layer (Layer 1) and Data Link Layer (Layer 2) of the OSI model. Ethernet uses physical media such as twisted-pair copper cables or fiber optic cables to transmit data between devices in the form of Ethernet frames. Each frame contains source and destination MAC addresses, which allow switches to forward data to the correct device within the same local network. Modern Ethernet supports speeds ranging from 10 Mbps to 800 Gbps and primarily operates in full-duplex mode.
+
+
+
+
+
+**# Ethernet :**
 
 * standard technology for connecting devices in a wired Local Area Network (LAN).
-* uses physical cables (often twisted-pair copper or fiber optic) to transmit data between devices. 
+* uses physical cables (often twisted-pair copper or fiber optic) to transmit data between devices.
 * operates at the physical and data link layers of the OSI model
 * utilizing structured data "frames" to ensure information reaches the correct destination.
 
@@ -44,7 +50,7 @@
 
 &#x20;  100 Mbps Fast        Fiber        Full Duplex
 
-&#x20;  1 Gbps Gigabit
+&#x20;  1 Gbps Gigabit		     Simplex
 
 &#x20;  10 Gbps 10-Gigabit
 
@@ -100,7 +106,7 @@
 
 ***# Copper Cables (Typical Distance: 100 Metre)***: cat1, cat2, cat3, cat5, cat5e, cat6, etc
 
-***# Fibre Cables (Typical Diastance: Short/Long/Depends)***<i>:</i>  Single-Mode Fibre, Multi-Mode Fibre, Fibre / DAC
+***# Fibre Cables (Typical Distance: Short/Long/Depends)***<i>:</i>  Single-Mode Fibre, Multi-Mode Fibre, Fibre / DAC
 
 
 

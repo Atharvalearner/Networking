@@ -1,3 +1,6 @@
+Reverse Address Resolution Protocol (RARP) is a Network Layer protocol that allows a device to obtain its IP address when it already knows its own MAC address. It was primarily designed for diskless workstations that did not have local storage to save an IP configuration. During boot, the device broadcasts a RARP request containing its MAC address, asking for its IP address. A RARP server looks up the MAC address in its database and replies with the corresponding IP address. RARP is now obsolete because it has been replaced by DHCP, which provides not only an IP address but also subnet mask, default gateway, DNS server, lease time, and many other configuration parameters.
+
+
 # Reverse ARP (RARP)
 Suppose a very old diskless computer boots.
 It knows only: MAC Address - AA:AA:AA:AA

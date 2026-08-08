@@ -1,4 +1,16 @@
-Cisco IOS is a network operating system that manages router hardware, configuration, routing protocols, security features, and packet forwarding.
+Cisco IOS is the operating system that runs on Cisco routers and switches. It manages hardware resources, provides the CLI, supports routing protocols such as OSPF, EIGRP, and BGP, implements features like ACLs, NAT, and QoS, and forwards packets between networks. Internally, Cisco IOS is organized into four logical planes. The Management Plane provides configuration and monitoring through CLI, SSH, SNMP, and APIs. The Control Plane learns network topology, runs routing protocols, builds the routing table, and determines the best path for traffic. The Data Plane uses this information to perform fast packet forwarding by applying the forwarding table, ACLs, NAT, and QoS. Underneath these planes are the hardware resources, including the CPU, RAM, Flash, interfaces, and ASICs.
+
+
+
+During boot, the router performs POST, executes the bootstrap program from ROM, loads the IOS image from Flash into DRAM, reads the startup configuration from NVRAM into RAM as the running configuration, initializes interfaces and routing protocols, and finally becomes operational. When a packet arrives, the router removes the Layer 2 header, performs a longest-prefix-match lookup on the destination IP, decrements the TTL, updates the IP header checksum, applies configured policies such as ACLs or NAT, resolves the next-hop MAC address if necessary, encapsulates the packet into a new Layer 2 frame, and forwards it through the appropriate outgoing interface.
+
+
+
+
+
+**# Cisco IOS:**
+
+It is a network operating system that manages router hardware, configuration, routing protocols, security features, and packet forwarding.
 
 
 
@@ -12,38 +24,38 @@ data plane uses that information to forward packets.
 
 ***# ROMMON:***
 
-* ROM Monitor is a low-level recovery and diagnostic environment 
+* ROM Monitor is a low-level recovery and diagnostic environment
 * used when normal booting fails or when manual recovery is required.
 
 
 
 **# Simple Internal View of router:**
 
-┌───────────────────────────────────┐
+┌───────────────────────────────────-------┐
 
 │            MANAGEMENT PLANE              │
 
-│ CLI │ SSH │ SNMP │ NETCONF/RESTCONF     │
+│ CLI │ SSH │ SNMP │ NETCONF/RESTCONF      │
 
-├───────────────────────────────────|
+├───────────────────────────────────-------|
 
 │              CONTROL PLANE               │
 
-│ OSPF │ BGP │ STP\* │ ARP │ Routing Table │
+│ OSPF │ BGP │ STP\* │ ARP │ Routing Table  │
 
-├───────────────────────────────────┤
+├──────────────────────────────────-------─┤
 
 │                DATA PLANE                │
 
-│ FIB │ Adjacency │ ACL │ QoS │ Forwarding│
+│ FIB │ Adjacency │ ACL │ QoS │ Forwarding │
 
-├───────────────────────────────────┤
+├───────────────────────────────────-------┤
 
 │                  HARDWARE                |
 
 │ CPU │ RAM │ Flash │ Interfaces │ ASIC/NPU│
 
-└───────────────────────────────────┘
+└───────────────────────────────────-------┘
 
 
 
@@ -87,11 +99,11 @@ RAM   → What is running now
 
 1. ***ROM:***
 * contains low-level boot components.
-* Traditionally:  POST, 
+* Traditionally:  POST,
 
-&#x09;	   Bootstrap, 
+&#x09;	   Bootstrap,
 
-&#x09;	   ROMMON, 
+&#x09;	   ROMMON,
 
 &#x09;	   Mini/recovery IOS on some platforms
 

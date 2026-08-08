@@ -1,24 +1,30 @@
-Flow control is a mechanism used by TCP to ensure that the sender does not send data faster than the receiver can process it. It prevents the receiver's buffer from overflowing.
+Flow Control is a TCP mechanism that ensures the sender does not transmit data faster than the receiver can receive and process it. Its main purpose is to prevent the receiver's buffer from overflowing. Unlike congestion control, which protects the network from overload, flow control protects the receiving device from being overwhelmed.
 
-Imagine:
+TCP implements flow control using a sliding window mechanism. The receiver continuously advertises its available buffer space, called the Receive Window (rwnd), in the TCP header. The sender is allowed to transmit only up to the number of bytes specified in the advertised receive window. As the receiver processes data and frees buffer space, it advertises a larger window, allowing the sender to transmit more data. If the receiver's buffer becomes full, it advertises a window size of zero, causing the sender to temporarily stop sending until a non-zero window update is received.
+
+
+# Flow control:
+It is a mechanism used by TCP to ensure that the sender does not send data faster than the receiver can process it. It prevents the receiver's buffer from overflowing.
+
+# Who controls Flow Control?
+The receiver controls it by advertising the available receive window.
+
+# Example:
 Sender can send 1000 MB/s
 Receiver can process only 100 MB/s
 
 Without flow control:
 Sender ---------------------> Receiver
-
-1000 MB/s
+	  1000 MB/s
 
 Receiver's buffer fills up.
 Packets start getting dropped.
 
-With Flow Control:
-Receiver says:
-I can only receive 100 MB now.
-Sender slows down.
+# With Flow Control:
+Receiver says: I can only receive 100 MB now.
+So, the Sender slows down.
 
-
-How does TCP implement Flow Control?
+# How does TCP implement Flow Control?
 TCP uses a Receive Window (rwnd).
 
 Suppose the receiver has:
@@ -29,8 +35,7 @@ Available = 3000 Bytes
 In this case Receiver sends:
 Window Size = 3000
 
-Meaning:
-"Please don't send more than 3000 bytes until I acknowledge more data."
+Meaning: "Please don't send more than 3000 bytes until I acknowledge more data."
 
 After processing data:
 Buffer Free = 5000 Bytes
@@ -39,6 +44,3 @@ Receiver advertises:
 Window Size = 5000
 
 Sender increases transmission.
-
-Who controls Flow Control?
-The receiver controls it by advertising the available receive window.

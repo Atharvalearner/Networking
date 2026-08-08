@@ -17,3 +17,6 @@ ARP Request → Broadcast
 ARP Reply → Unicast
 
 Unicast is one-to-one communication between a sender and one specific receiver. Broadcast is one-to-all communication within a broadcast domain, such as an ARP request. Multicast is one-to-many communication where only members of a selected group receive the traffic, making it useful for applications such as IPTV. Anycast uses the same service address at multiple locations, and routing directs the sender to one selected instance, usually based on the best available route.
+
+# Anycast:
+a single IP address is shared by multiple servers in different locations. When a user sends a request, the network automatically routes the traffic to the topologically "nearest" or best-performing server using standard routing protocols like BGP.
