@@ -1,4 +1,4 @@
-Routing protocols like RIP, OSPF, and EIGRP work well within a single organization or Autonomous System (AS). However, the Internet consists of thousands of different Autonomous Systems owned by ISPs, cloud providers, universities, and enterprises. A routing protocol is needed to exchange routing information between these Autonomous Systems. BGP (Border Gateway Protocol) is an Exterior Gateway Protocol (EGP) that performs this function. Instead of choosing routes based on hop count or bandwidth, BGP selects the best path using routing policies and path attributes, the most important being the AS Path.
+Routing protocols like RIP, OSPF, and EIGRP work well within a single organization or Autonomous System (AS). However, the Internet consists of thousands of different Autonomous Systems owned by ISPs, cloud providers, universities, and enterprises. A routing protocol is needed to exchange routing information between these Autonomous Systems. BGP (Border Gateway Protocol) is an Exterior Gateway Protocol (EGP) that performs this function. 
 
 
 

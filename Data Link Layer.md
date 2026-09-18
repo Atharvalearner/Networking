@@ -4,9 +4,11 @@ The Data Link Layer provides reliable node-to-node communication within the same
 
 
 
+
+
 **# Purpose:**
 
-* The Data Link Layer (Layer 2 of the OSI model) is responsible for reliable node-to-node communication over a physical link. 
+* The Data Link Layer (Layer 2 of the OSI model) is responsible for reliable node-to-node communication over a physical link.
 * It takes packets from the Network Layer, encapsulates them into frames, adds source and destination MAC addresses, detects transmission errors using FCS (CRC), controls access to the transmission medium, and delivers frames to the correct device within the same LAN.
 
 
@@ -25,7 +27,7 @@ The Data Link Layer provides reliable node-to-node communication within the same
 
 
 
-* Suppose the frame contains the protocol amongs: IPv4, IPv6, ARP
+* Suppose the frame contains the protocol among: IPv4, IPv6, ARP
 * The LLC helps identify which Network Layer protocol should receive the payload.
 
 
@@ -59,6 +61,4 @@ The Data Link Layer provides reliable node-to-node communication within the same
 | Identifies Layer 3 protocol | Uses MAC addresses              |
 
 | Protocol identification     | Media access and frame delivery |
-
-
 

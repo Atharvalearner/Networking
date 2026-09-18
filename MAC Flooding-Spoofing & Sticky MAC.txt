@@ -22,7 +22,6 @@ More unnecessary traffic
 
 
 # Port security:
-
 It limits which or how many MAC addresses can be learned on a port and defines what happens when the limit is violated.
 Port Security Actions:
 Action:  Protect, Restrict, Shutdown

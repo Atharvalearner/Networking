@@ -62,7 +62,7 @@ Every subnet has: 62 usable hosts Everything is equal.
 
 Same Problem Solve Using VLSM by:
 
-| Department | Needed | Allocated by SubnetMast	 |
+| Department | Needed | Allocated by Subnet Mask |
 
 | ---------- | -----: | ------------------------ |
 
@@ -92,9 +92,9 @@ That is why it is called: Variable Length Subnet Mast
 
 ***# Why doesn't RIPv1 support VLSM?***
 
-Because RIPv1 is a classful routing protocol. 
+Because RIPv1 is a classful routing protocol.
 
-It does not include subnet mask information in routing updates, so routers assume the default classful mask (Class A, B, or C) based on IP address (eg. 80.30.10.3 is from Class A, 153.8.30.4 is from Class B). 
+It does not include subnet mask information in routing updates, so routers assume the default classful mask (Class A, B, or C) based on IP address (eg. 80.30.10.3 is from Class A, 153.8.30.4 is from Class B).
 
 Without mask information, routers cannot distinguish subnets of different sizes.
 
